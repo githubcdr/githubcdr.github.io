@@ -1,114 +1,367 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>404 Page not found</title>
-	<meta name="description" content="">
-	<meta name="generator" content="Hugo 0.48" />
-	<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content=" John Doe&#39;s Personal blog about everything" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
-	
-	<link rel="dns-prefetch" href="//fonts.googleapis.com">
-	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
-	<link rel="stylesheet" href="/css/style.css">
-	<script type="text/javascript" src="/js/scripts.js"></script>
-	<link rel="shortcut icon" href="/favicon.ico">
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" />
+    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+    <style>
+     * {
+         -moz-box-sizing:border-box;
+         -webkit-box-sizing:border-box;
+         box-sizing:border-box;
+     }
+
+     html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+     abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+     small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+     fieldset, form, label, legend, caption, article, aside, canvas, details, figcaption, figure,  footer, header, hgroup,
+     menu, nav, section, summary, time, mark, audio, video {
+         margin:0;
+         padding:0;
+         border:0;
+         outline:0;
+         vertical-align:baseline;
+         background:transparent;
+     }
+
+     article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+         display: block;
+     }
+
+     html {
+         font-size: 16px;
+         line-height: 24px;
+         width:100%;
+         height:100%;
+         -webkit-text-size-adjust: 100%;
+         -ms-text-size-adjust: 100%;
+         overflow-y:scroll;
+         overflow-x:hidden;
+     }
+
+     img {
+         vertical-align:middle;
+         max-width: 100%;
+         height: auto;
+         border: 0;
+         -ms-interpolation-mode: bicubic;
+     }
+
+     body {
+         min-height:100%;
+         -webkit-font-smoothing: subpixel-antialiased;
+     }
+
+     .clearfix {
+	       clear:both;
+	       zoom: 1;
+     }
+     .clearfix:before, .clearfix:after {
+         content: "\0020";
+         display: block;
+         height: 0;
+         visibility: hidden;
+     }
+     .clearfix:after {
+         clear: both;
+     }
+    </style>
+    <style>
+  .plain.error-page-wrapper {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color:#6355bc;
+    padding:0 5%;
+    position:relative;
+  }
+
+  .plain.error-page-wrapper .content-container {
+    -webkit-transition: left .5s ease-out, opacity .5s ease-out;
+    -moz-transition: left .5s ease-out, opacity .5s ease-out;
+    -ms-transition: left .5s ease-out, opacity .5s ease-out;
+    -o-transition: left .5s ease-out, opacity .5s ease-out;
+    transition: left .5s ease-out, opacity .5s ease-out;
+    max-width:400px;
+    position:relative;
+    left:-30px;
+    opacity:0;
+  }
+
+  .plain.error-page-wrapper .content-container.in {
+    left: 0px;
+    opacity:1;
+  }
+
+  .plain.error-page-wrapper .head-line {
+    transition: color .2s linear;
+    font-size:48px;
+    line-height:60px;
+    color:rgba(255,255,255,.2);
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+  }
+  .plain.error-page-wrapper .subheader {
+    transition: color .2s linear;
+    font-size:36px;
+    line-height:46px;
+    color:#fff;
+  }
+  .plain.error-page-wrapper hr {
+    height:1px;
+    background-color: rgba(255,255,255,.2);
+    border:none;
+    width:250px;
+    margin:35px 0;
+  }
+  .plain.error-page-wrapper .context {
+    transition: color .2s linear;
+    font-size:18px;
+    line-height:27px;
+    color:#fff;
+  }
+  .plain.error-page-wrapper .context p {
+    margin:0;
+  }
+  .plain.error-page-wrapper .context p:nth-child(n+2) {
+    margin-top:12px;
+  }
+  .plain.error-page-wrapper .buttons-container {
+    margin-top: 45px;
+    overflow: hidden;
+  }
+  .plain.error-page-wrapper .buttons-container a {
+    transition: color .2s linear, border-color .2s linear;
+    font-size:14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:#fff;
+    border:2px solid white;
+    border-radius: 99px;
+    padding:8px 30px 9px;
+    display: inline-block;
+    float:left;
+  }
+  .plain.error-page-wrapper .buttons-container a:hover {
+    background-color:rgba(255,255,255,.05);
+  }
+  .plain.error-page-wrapper .buttons-container a:first-child {
+    margin-right:25px;
+  }
+
+  @media screen and (max-width: 485px) {
+    .plain.error-page-wrapper .header {
+      font-size:36px;
+     }
+    .plain.error-page-wrapper .subheader {
+      font-size:27px;
+      line-height:38px;
+     }
+    .plain.error-page-wrapper hr {
+      width:185px;
+      margin:25px 0;
+     }
+
+    .plain.error-page-wrapper .context {
+      font-size:16px;
+      line-height: 24px;
+     }
+    .plain.error-page-wrapper .buttons-container {
+      margin-top:35px;
+    }
+
+    .plain.error-page-wrapper .buttons-container a {
+      font-size:13px;
+      padding:8px 0 7px;
+      width:45%;
+      text-align: center;
+    }
+    .plain.error-page-wrapper .buttons-container a:first-child {
+      margin-right:10%;
+    }
+  }
+</style>
+    <style>
+
+    .background-color {
+      background-color: rgba(244, 244, 244, 1) !important;
+    }
+
+
+    .primary-text-color {
+      color: rgba(171, 171, 171, 1) !important;
+    }
+
+    .secondary-text-color {
+      color: rgba(0, 0, 0, 1) !important;
+    }
+
+    .sign-text-color {
+      color: #FFBA00 !important;
+    }
+
+    .sign-frame-color {
+      color: #343C3F;
+    }
+
+    .pane {
+      background-color: #FFFFFF !important;
+    }
+
+    .border-button {
+      color: rgba(46, 186, 174, 1) !important;
+      border-color: rgba(46, 186, 174, 1) !important;
+    }
+    .button {
+      background-color: rgba(46, 186, 174, 1) !important;
+      color: #FFFFFF !important;
+    }
+
+    .shadow {
+      box-shadow: 0 0 60px #000000;
+    }
+
+</style>
+  </head>
+  <body class="plain error-page-wrapper background-color background-image">
+    <div class="content-container">
+	<div class="head-line secondary-text-color">
+		404
+	</div>
+	<div class="subheader primary-text-color">
+		Oops, the page you're <br>
+		looking for does not exist.
+	</div>
+	<hr>
+	<div class="clearfix"></div>
+	<div class="context primary-text-color">
 		
-</head>
-<body class="body">
-	<div class="container container-outer">
-		<header class="header">
-	<div class="container container-inner">
-		<div class="logo" role="banner">
-			<a class="logo__link" href="/" title="Mainroad" rel="home">
-				<div class="logo__title">Mainroad</div>
-				<div class="logo__tagline">Just another site</div>
-			</a>
-		</div>
+    <p>
+      You may want to head back to the homepage.<br />
+      If you think something is broken, report a problem.
+    </p>
 	</div>
-	
-<nav class="menu">
-	<ul class="menu__list">
-		<li class="menu__item"><a class="menu__link" href="/post/migrate-from-jekyll/">JEKYLL MIGRATION</a></li>
-		<li class="menu__item"><a class="menu__link" href="/post/goisforlovers/">(HU)GO TEMPLATE PRIMER</a></li>
-		<li class="menu__item"><a class="menu__link" href="/about/">ABOUT HUGO</a></li>
-		<li class="menu__item"><a class="menu__link" href="/post/hugoisforlovers/">GETTING STARTED WITH HUGO</a></li>
-	</ul>
-</nav>
-
-</header>
-
-		<div class="wrapper flex">
-			
-<main class="main content" role="main">
-	<div class="warning">
-		<h1 class="warning__headline">404. Page not found</h1>
-		<p class="warning__text">The page you were looking for appears to have been moved, deleted or does not exist. Please, use search or go to <a href="/">main page</a>.</p>
-	</div>
-</main>
-
-			
-<aside class="sidebar"><div class="widget-search widget">
-	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
-		<label>
-			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
-		</label>
-		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="/" />
-	</form>
-</div><div class="widget-recent widget">
-	<h4 class="widget__title">Recent Posts</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/basic-elements/">Basic HTML Elements</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/creating-a-new-theme/">Creating a New Theme</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/goisforlovers/">(Hu)go Template Primer</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/hugoisforlovers/">Getting Started with Hugo</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/migrate-from-jekyll/">Migrate to Hugo from Jekyll</a></li>
-		</ul>
+	<div class="buttons-container">
+		<a class="border-button" href="/">Go To Homepage</a>
+		<a class="border-button" href="mailto:example">Report A Problem</a>
 	</div>
 </div>
-<div class="widget-categories widget">
-	<h4 class="widget__title">Categories</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/categories/development">Development</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/golang">Golang</a></li>
-		</ul>
-	</div>
-</div>
-<div class="widget-taglist widget">
-	<h4 class="widget__title">Tags</h4>
-	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/basic-elements" title="Basic elements">Basic elements</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/css" title="Css">Css</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/development" title="Development">Development</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/go" title="Go">Go</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/golang" title="Golang">Golang</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/html" title="Html">Html</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/hugo" title="Hugo">Hugo</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/templates" title="Templates">Templates</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/themes" title="Themes">Themes</a>
-	</div>
-</div>
-</aside>
-		</div>
-		<footer class="footer">
-	<div class="container container-inner">
-		<div class="footer__copyright">&copy; 2018 Mainroad. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span></div>
-	</div>
-</footer>
 
-	</div>
-<script>
-	var navigation = responsiveNav(".menu", {
-		navClass: "menu--collapse",
-		label: "Menu",
-	});
-</script></body>
+    <script>
+     function ErrorPage(container, pageType, templateName) {
+       this.$container = $(container);
+       this.$contentContainer = this.$container.find(templateName == 'sign' ? '.sign-container' : '.content-container');
+       this.pageType = pageType;
+       this.templateName = templateName;
+     }
+
+     ErrorPage.prototype.centerContent = function () {
+       var containerHeight = this.$container.outerHeight()
+         , contentContainerHeight = this.$contentContainer.outerHeight()
+         , top = (containerHeight - contentContainerHeight) / 2
+         , offset = this.templateName == 'sign' ? -100 : 0;
+
+       this.$contentContainer.css('top', top + offset);
+     };
+
+     ErrorPage.prototype.initialize = function () {
+       var self = this;
+
+       this.centerContent();
+       this.$container.on('resize', function (e) {
+         e.preventDefault();
+         e.stopPropagation();
+         self.centerContent();
+       });
+
+       
+       if (this.templateName == 'plain') {
+         window.setTimeout(function () {
+           self.$contentContainer.addClass('in');
+         }, 500);
+       }
+
+       
+       if (this.templateName == 'sign') {
+         $('.sign-container').animate({textIndent : 0}, {
+           step : function (now) {
+             $(this).css({
+               transform : 'rotate(' + now + 'deg)',
+               'transform-origin' : 'top center'
+             });
+           },
+           duration : 1000,
+           easing : 'easeOutBounce'
+         });
+       }
+     };
+
+
+     ErrorPage.prototype.createTimeRangeTag = function(start, end) {
+       return (
+         '<time utime=' + start + ' simple_format="MMM DD, YYYY HH:mm">' + start + '</time> - <time utime=' + end + ' simple_format="MMM DD, YYYY HH:mm">' + end + '</time>.'
+       )
+     };
+
+
+     ErrorPage.prototype.handleStatusFetchSuccess = function (pageType, data) {
+       if (pageType == '503') {
+         $('#replace-with-fetched-data').html(data.status.description);
+       } else {
+         if (!!data.scheduled_maintenances.length) {
+           var maint = data.scheduled_maintenances[0];
+           $('#replace-with-fetched-data').html(this.createTimeRangeTag(maint.scheduled_for, maint.scheduled_until));
+           $.fn.localizeTime();
+         }
+         else {
+           $('#replace-with-fetched-data').html('<em>(there are no active scheduled maintenances)</em>');
+         }
+       }
+     };
+
+
+     ErrorPage.prototype.handleStatusFetchFail = function (pageType) {
+       $('#replace-with-fetched-data').html('<em>(enter a valid StatusPage.io url)</em>');
+     };
+
+
+     ErrorPage.prototype.fetchStatus = function (pageUrl, pageType) {
+       
+       if (!pageUrl || !pageType || pageType == '404') return;
+
+       var url = ''
+         , self = this;
+
+       if (pageType == '503') {
+         url = pageUrl + '/api/v2/status.json';
+       }
+       else {
+         url = pageUrl + '/api/v2/scheduled-maintenances/active.json';
+       }
+
+       $.ajax({
+         type : "GET",
+         url : url,
+       }).success(function (data, status) {
+         
+         self.handleStatusFetchSuccess(pageType, data);
+       }).fail(function (xhr, msg) {
+         
+         self.handleStatusFetchFail(pageType);
+       });
+
+     };
+     var ep = new ErrorPage('body', "404", "plain");
+     ep.initialize();
+
+     
+     $(window).on('resize', function() {
+       $('body').trigger('resize')
+     });
+
+    </script>
+
+
+  </body>
 </html>
